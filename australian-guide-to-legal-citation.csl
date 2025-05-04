@@ -170,31 +170,30 @@
     </choose>
   </macro>
   <!-- Titles -->
-  <macro name="title">
-    <choose>
-      <if type="book legislation motion_picture manuscript report" match="any">
-        <text variable="title" font-style="italic" text-case="title"/>
-      </if>
-      <else-if type="bill">
-        <text variable="title" text-case="title"/>
-      </else-if>
-      <else-if type="legal_case">
-        <text variable="title" font-style="italic" strip-periods="true"/>
-      </else-if>
-      <else-if type="entry-dictionary">
-        <text variable="container-title" font-style="italic"/>
-      </else-if>
-      <else-if type="entry-encyclopedia">
-        <group delimiter=", ">
-          <text variable="publisher"/>
-          <text variable="container-title" font-style="italic"/>
-        </group>
-      </else-if>
-      <else>
-        <text variable="title" quotes="true" text-case="title"/>
-      </else>
-    </choose>
-  </macro>
+<macro name="title">
+  <choose>
+    <if type="legislation">
+      <group delimiter=" ">
+        <text variable="title" font-style="italic"/>
+        <names variable="author" font-style="normal" prefix="(" suffix=")">
+          <name form="short" initialize="false"/>
+        </names>
+      </group>
+    </if>
+    <else-if type="book motion_picture manuscript report" match="any">
+      <text variable="title" font-style="italic" text-case="title"/>
+    </else-if>
+    <else-if type="bill">
+      <text variable="title" text-case="title"/>
+    </else-if>
+    <else-if type="legal_case">
+      <text variable="title" font-style="italic" strip-periods="true"/>
+    </else-if>
+    <else>
+      <text variable="title" quotes="true" text-case="title"/>
+    </else>
+  </choose>
+</macro>
   <macro name="title-short-flag">
     <choose>
       <if type="book legislation webpage motion_picture manuscript legal_case report" match="any">
