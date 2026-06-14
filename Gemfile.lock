@@ -82,7 +82,7 @@ GEM
     rake (13.2.1)
     reverse_markdown (3.0.0)
       nokogiri
-    rexml (3.4.1)
+    rexml (3.4.2)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -110,10 +110,9 @@ GEM
 PLATFORMS
   ruby
   x64-mingw-ucrt
-  x64-mingw32
 
 DEPENDENCIES
-  csl (~> 2.1)
+  csl (~> 2.0)
   fuubar
   nokogiri
   rake
